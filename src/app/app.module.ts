@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 const routes = [
   { path: '', component: HomeComponent },
@@ -25,7 +26,8 @@ const routes = [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,

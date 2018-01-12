@@ -1,0 +1,36 @@
+<!-- Popup for new student password input -->
+<app-dialog [(visible)]="showNewStudentPasswordDialog" (hasBeenClosed)="registerPassword = ''; registerPasswordConfirm = ''; showNewStudentPasswordDialog = false">
+    
+  <h1>Welcome {{ newStudent.firstName }} {{ newStudent.lastName }}</h1>
+  <br>
+
+  <!-- Password input -->
+  <div fxLayout="row" fxLayoutAlign="space-around center">
+    <p>Create your password: </p>
+    <mat-form-field>
+      <input matInput type="password" placeholder="password" [min]="6" [max]="20" (keyup.enter)="signupNewStudent()" autofocus>
+    </mat-form-field>
+  </div>
+
+  <!-- Password confirm -->
+  <div fxLayout="row" fxLayoutAlign="space-around center">
+    <p>Confirm your password: </p>
+    <mat-form-field>
+      <input matInput type="password" placeholder="confirm password" [min]="6" [max]="20" (keyup.enter)="signupNewStudent()">
+    </mat-form-field>
+  </div>
+
+  <!-- Errors when creating new account -->
+  <p *ngIf="newStudentPasswordErrors !== ''" style="color: red; font-weight: bold; text-align: center;">{{ newStudentPasswordErrors }}</p>
+
+  <!-- Submit and Cancel buttons -->
+  <div>
+    <div fxFlex></div>
+    <button mat-raised-button color="warn" class="dialogButton" (click)="signupNewStudent()" [disabled]="registerPassword === '' || registerPasswordConfirm === '' || registerPassword !== registerPasswordConfirm">Submit</button>
+    <button mat-raised-button color="warn" class="dialogButton" (click)="registerPassword = ''; registerPasswordConfirm = ''; showNewStudentPasswordDialog = false">Cancel</button>
+  </div>
+
+
+
+</app-dialog>
+<!-- End of popup for new student password input -->
