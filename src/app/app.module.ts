@@ -1,13 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { 
   MatToolbarModule,
   MatButtonModule,
   MatDialogModule,
  } from '@angular/material';
+ import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 import { AppComponent } from './app.component';
@@ -33,9 +34,11 @@ const routes = [
     BrowserModule,
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
+    NoopAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
     MatDialogModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

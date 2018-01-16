@@ -8,6 +8,8 @@ import { MatButtonModule } from '@angular/material'
 })
 export class HomeComponent implements OnInit {
 
+  showNewStudentPasswordDialog = false;
+
   constructor() { }
 
   ngOnInit() {
